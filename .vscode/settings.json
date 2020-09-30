@@ -2,6 +2,7 @@
     "files.associations": {
         "*.jsx": "javascriptreact",
         "*.js": "javascript",
-        "bitset": "cpp"
+        "bitset": "cpp",
+        "algorithm": "cpp"
     }
 }
