@@ -3,6 +3,12 @@
         "*.jsx": "javascriptreact",
         "*.js": "javascript",
         "bitset": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "regex": "cpp",
+        "xlocale": "cpp",
+        "xstring": "cpp",
+        "ios": "cpp",
+        "xiosbase": "cpp",
+        "iostream": "cpp"
     }
 }
