@@ -2,7 +2,9 @@
 #include <vector>
 using namespace std;
 
-// A simple binary search
+// A simple iterrative binary search: Run time O(log2n) Aux O(1)
+// We could do this recursively by passing low and high as paramters to the function
+// This would result in O(log2n) time still but our aux will become O(log2n) as well due to call stack.
 int binary_search(vector <int> arr, int target){
 int low = 0;
 int high = arr.size() -1;
