@@ -9,6 +9,8 @@ int ppp(double p) {
 } 
   
 // percent per people *todo
+
+
 int main() { 
    cout << ppp(.12); 
    return 0;
