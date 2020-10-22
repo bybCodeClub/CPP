@@ -3,6 +3,8 @@
         "*.jsx": "javascriptreact",
         "*.js": "javascript",
         "iostream": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "unordered_set": "cpp",
+        "queue": "cpp"
     }
 }
