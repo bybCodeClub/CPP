@@ -36,7 +36,22 @@ vector<vector<int>> itrLOT(TreeNode* root){
     }
     return ans;
 }
-// recursive 
+// RECURSIVE level order traversal
+vector<vector<int>> ans{};
+void help(TreeNode*node, int level){
+if(node == nullptr) return;
+if(level == ans.size()){
+    vector<int> tmp; 
+    ans.push_back(tmp);
+}
+ans[level].push_back(node->val);
+if(node->left) help(node->left, level +1);
+if(node->right) help(node->right, level+1);
+}
+vector<vector<int>> levelOrder(TreeNode*root){
+    if(root == nullptr) return {};
+    help(root, 0); return ans;
+}
 
 // tests
 int  main(){
@@ -48,7 +63,7 @@ root->left->right = new TreeNode();
 root->right = new TreeNode(20);
 root->right->left = new TreeNode(15);
 root->right->right = new TreeNode(7);
-auto t = itrLOT(root);
+auto t =  levelOrder(root);
 for ( const auto &i : t ){
    for ( int x : i ) cout << x << ' ';
    cout << endl;
