@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-// returns the number of perfect squares which sums to n
+// returns the least number of perfect squares which sums to n
 class Solution { public:
 int numSquares(int n){
         vector<int> mins(n+1, 0);
