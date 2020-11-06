@@ -4,7 +4,35 @@
 
 using namespace std;
 
-class Solution { public:
+class Solution { 
+private:
+void dfs(vector<vector<char>>&grid, int i, int j){
+    int m = grid.size(), n = grid[0].size();
+    if( i < 0 || i == m || j < 0 || j == n || grid[i][j] == '0'){
+        return;
+    } 
+    grid[i][j] = '0';
+    dfs(grid, i-1, j);
+    dfs(grid, i+1, j);
+    dfs(grid, i, j-1);
+    dfs(grid, i, j+1);
+}
+public:
+// dfs solution
+int islands_DFS(vector<vector<char>>&grid){
+    int m = grid.size(), n = m ? grid[0].size() : 0, c = 0;
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < n; j++){
+            if(grid[i][j] == '1'){
+                c++;
+                dfs(grid,i,j);
+            }
+        }
+    }
+    return c;
+}
+
+// bfs solution
 int islands_BFS(vector<vector<char>> &grid){
 int x = grid.size(), y = x ? grid[0].size() : 0, count = 0, offsets[] = {0, 1 ,0, -1, 0};
 for(int i = 0; i < x; i++){
@@ -39,7 +67,14 @@ vector<vector<char>> grid = {
 {'0','0','1','0','0'},
 {'0','0','0','1','1'},
 };
+vector<vector<char>> grid2 = {
+{'1','1','0','0','0'},
+{'1','1','0','0','0'},
+{'0','0','1','0','0'},
+{'0','0','0','1','1'},
+};
 Solution test; 
-cout << "you have: " << test.islands_BFS(grid) << " Islands"; 
+cout << "[BFS] oi you have: " << test.islands_BFS(grid) << " Islands" << endl;
+cout << "[DFS] oi you have: " << test.islands_DFS(grid2) << " Islands" << endl; 
     return 0;
 }
