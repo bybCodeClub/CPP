@@ -5,6 +5,7 @@
         "iostream": "cpp",
         "vector": "cpp",
         "unordered_set": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "xutility": "cpp"
     }
 }
