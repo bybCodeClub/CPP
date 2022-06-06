@@ -2,6 +2,6 @@
 #define RANDOM1_HPP
 
 double getOneGaussianBySummation();
-double getOneGaussianByBoxMuller();
+double gaussian_box_muller();
 
 #endif

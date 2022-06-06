@@ -3,9 +3,7 @@
 #include <cmath>
 #include "payoff.hpp"
 
-#if !defined(_MSC_VER)
-    using namespace std;
-#endif
+using namespace std;
 
 double SimpleMonteCarlo2(
     const PayOff& thePayOff,
@@ -19,17 +17,17 @@ double SimpleMonteCarlo2(
         double rootVariance = sqrt(variance);
         double itoCorrection = -0.5*variance;
 
-        double movedSpot = Spot * exp(r*Expiry + itoCorrection);
+        double movedSpot = Spot * exp(r*Expiry +itoCorrection);
         double thisSpot;
-        double runningSum = 0;
+        double runningSum = 0.0;
 
         for(unsigned long i=0; i < NumberOfPaths; i++) {
-            double thisGaussian = getOneGaussianByBoxMuller();
+            double thisGaussian = gaussian_box_muller();
             thisSpot = movedSpot * exp(rootVariance * thisGaussian);
-            double thisPayOff = thePayOff(thisSpot);
-            runningSum += thisPayOff;
+            runningSum += thePayOff(thisSpot);
+             
         }
         double mean = runningSum / NumberOfPaths;
-        mean += exp(-r*Expiry);
+        mean *= exp(-r*Expiry);
         return mean;
     }
