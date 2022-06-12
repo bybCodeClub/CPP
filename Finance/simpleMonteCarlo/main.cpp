@@ -54,12 +54,13 @@ int main() {
     cout << "the prices are " << resultCall << " for the call and " << resultPut << " for the put\n";
     cout << "digital prices are " << resultdigital << " and the double digital price is " << resultDdigital << "\n";
 
-    simpleMonteCarlo1(Expiry, Strike, Spot, Vol, r, numberOfPaths);
+    //simpleMonteCarlo1(Expiry, Strike, Spot, Vol, r, numberOfPaths);
 
     double tmp;
     cin >> tmp;
     return 0;
 }
+
 
 void simpleMonteCarlo1(
     double Expiry,

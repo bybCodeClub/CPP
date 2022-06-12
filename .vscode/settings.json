@@ -44,7 +44,8 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "typeinfo": "cpp",
-        "chrono": "cpp"
+        "chrono": "cpp",
+        "cassert": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

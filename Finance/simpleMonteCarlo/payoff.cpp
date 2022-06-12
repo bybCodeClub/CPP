@@ -9,7 +9,7 @@ PayOff::PayOff(double Strike_, OptionType TheOptionsType_)
 
 
 double PayOff::heavey_side(const double& val) const {
-    if( val >= 0){
+    if( val >= 0 ){
         return 1.0;
     } else {
         return 0.0;
@@ -17,11 +17,11 @@ double PayOff::heavey_side(const double& val) const {
 } 
 
 double PayOff::payoff_double_digital(double K_L, double K_U, double x) const {
-  if (x >= K_L && x <= K_U) {
-    return 1.0;
-  } else {
-    return 0.0;
-  }
+    if( x >= K_L && x <= K_U ) {
+        return 1.0;
+    } else {
+        return 0.0;
+    }
 }
 
 double PayOff::operator()(double spot) const {
