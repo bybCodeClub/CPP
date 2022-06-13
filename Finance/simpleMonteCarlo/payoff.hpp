@@ -14,7 +14,6 @@ class PayOff {
     
     private:
         double Strike;
-        double Strike_U;
         OptionType TheOptionsType;
 };
 

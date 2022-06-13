@@ -2,9 +2,10 @@
 #define SIMPLEMC_HPP
 
 #include "payoff.hpp"
+#include "payoff2.hpp"
 
 double SimpleMonteCarlo2(
-    const PayOff& thePayOff,    // replaced strike
+    PayOff& thePayOff,    // replaced strike
     double Expiry,
     double Spot,
     double Vol,

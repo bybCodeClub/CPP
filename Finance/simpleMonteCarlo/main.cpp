@@ -1,9 +1,10 @@
-#include "random1.cpp"
+
 #include <iostream>
 #include <algorithm> 
 #include <cmath>
 #include "SimpleMC.cpp"
 #include "payoff.cpp"
+
 
 using namespace std;
 
@@ -42,7 +43,8 @@ int main() {
     PayOff putPayOff(Strike, PayOff::put);
     PayOff digitalPayOff(Strike, PayOff::digital);
     PayOff ddigitalPayOff(Strike, PayOff::double_digital);
-    
+
+
     double resultCall = SimpleMonteCarlo2(callPayOff, Expiry, Spot, Vol, r, numberOfPaths);
 
     double resultPut = SimpleMonteCarlo2(putPayOff, Expiry, Spot, Vol, r, numberOfPaths);

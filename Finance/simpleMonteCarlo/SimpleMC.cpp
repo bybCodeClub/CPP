@@ -1,12 +1,13 @@
 #include "SimpleMC.hpp"
-#include "random1.hpp"
+#include "random1.cpp"
 #include <cmath>
-#include "payoff.hpp"
+#include "payoff.hpp" 
+#include "payoff2.cpp"
 
 using namespace std;
 
 double SimpleMonteCarlo2(
-    const PayOff& thePayOff,
+    PayOff& thePayOff, // if PayOff2& is type then its set for payOff2Maincpp
     double Expiry,
     double Spot,
     double Vol,

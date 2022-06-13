@@ -1,28 +1,28 @@
 #ifndef PAYOFF2_HPP
-#define PAYOFF_HPP
+#define PAYOFF2_HPP
 
-class PayOff {
+class PayOff2 {
     public:
-        PayOff(){};
+        PayOff2(){};
         virtual double operator()(double Spot) const = 0;
-        virtual ~PayOff(){};
+        virtual ~PayOff2(){};
     private:
 };
 
-class PayOffCall : public PayOff {
+class PayOffCall : public PayOff2 {
     public:
-    PayOffCall(double Strike_);
-    virtual double operator()(double Spot) const;
-    virtual ~PayOffCall(){};
+        PayOffCall(double Strike_);
+        virtual double operator()(double Spot) const;
+        virtual ~PayOffCall(){};
     private:
         double Strike;
 };
 
-class PayOffPut : public PayOff {
+class PayOffPut : public PayOff2 {
     public:
-    PayOffPut(){};
-    virtual double operator()(double Spot) const;
-    virtual ~PayOffPut(){};
+        PayOffPut(double Strike_);
+        virtual double operator()(double Spot) const;
+        virtual ~PayOffPut(){};
     private:
         double Strike;
 };
