@@ -7,7 +7,7 @@
 using namespace std;
 
 double SimpleMonteCarlo2(
-    PayOff& thePayOff, // if PayOff2& is type then its set for payOff2Maincpp
+    PayOff2& thePayOff, // if PayOff2& is type then its set for payOff2Maincpp
     double Expiry,
     double Spot,
     double Vol,

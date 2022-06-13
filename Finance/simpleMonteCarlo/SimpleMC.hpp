@@ -5,7 +5,7 @@
 #include "payoff2.hpp"
 
 double SimpleMonteCarlo2(
-    PayOff& thePayOff,    // replaced strike
+    PayOff2& thePayOff,    // replaced strike
     double Expiry,
     double Spot,
     double Vol,
