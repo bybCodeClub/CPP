@@ -1,4 +1,3 @@
-#define _USE_MATH_DEFINES
 #include "random1.hpp"
 #include <algorithm>    // Needed for the "max" function
 #include <cmath>
@@ -33,4 +32,25 @@ double gaussian_box_muller() {
   } while (euclid_sq >= 1.0);
 
   return x*sqrt(-2*log(euclid_sq)/euclid_sq);
+}
+
+
+// exercise 3.1 - c++ design patterns and derivative pricing
+// this will allow our exotic/asian options
+// This provides a vector containing sampled points of a geometric
+// brownian motion stock price path..
+void calc_path_spot_prices(
+  std::vector<double>& spot_prices,
+  const double& r, // risk free rate
+  const double& v, // volatility
+  const double& T  // Time
+) {
+  double dt = T/static_cast<double>(spot_prices.size());
+  double drift = exp(dt*(r-0.5*v*v));
+  double vol = sqrt(v*v*dt);
+
+  for(int i = 1; i < spot_prices.size(); i++){
+    double gauss_bm = gaussian_box_muller();
+    spot_prices[i] = spot_prices[i-1] * drift * exp(vol*gauss_bm);
+  }
 }
