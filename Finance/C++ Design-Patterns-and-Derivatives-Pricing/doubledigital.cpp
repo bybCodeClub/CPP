@@ -14,3 +14,7 @@ double PODoubleDigital::operator()(double Spot) const {
 
     return 1;
 }
+
+PayOff3* PODoubleDigital::clone() const {
+    return new PODoubleDigital(*this);
+}
